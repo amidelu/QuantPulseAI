@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+<module fileurl="file://$PROJECT_DIR$/packages/core/core_network/melos_core_network.iml" filepath="$PROJECT_DIR$/packages/core/core_network/melos_core_network.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/core/core_storage/melos_core_storage.iml" filepath="$PROJECT_DIR$/packages/core/core_storage/melos_core_storage.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/core/design_system/melos_design_system.iml" filepath="$PROJECT_DIR$/packages/core/design_system/melos_design_system.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/features/feature_ai_copilot/melos_feature_ai_copilot.iml" filepath="$PROJECT_DIR$/packages/features/feature_ai_copilot/melos_feature_ai_copilot.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/features/feature_backtester/melos_feature_backtester.iml" filepath="$PROJECT_DIR$/packages/features/feature_backtester/melos_feature_backtester.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/features/feature_terminal/melos_feature_terminal.iml" filepath="$PROJECT_DIR$/packages/features/feature_terminal/melos_feature_terminal.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/engines/hybrid_ai_engine/melos_hybrid_ai_engine.iml" filepath="$PROJECT_DIR$/packages/engines/hybrid_ai_engine/melos_hybrid_ai_engine.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/engines/market_stream_engine/melos_market_stream_engine.iml" filepath="$PROJECT_DIR$/packages/engines/market_stream_engine/melos_market_stream_engine.iml"/>
+<module fileurl="file://$PROJECT_DIR$/apps/quant_pulse_mobile/melos_quant_pulse_mobile.iml" filepath="$PROJECT_DIR$/apps/quant_pulse_mobile/melos_quant_pulse_mobile.iml"/>
+<module fileurl="file://$PROJECT_DIR$/apps/widgetbook_showcase/melos_widgetbook_showcase.iml" filepath="$PROJECT_DIR$/apps/widgetbook_showcase/melos_widgetbook_showcase.iml"/>
+<module fileurl="file://$PROJECT_DIR$/melos_quant_pulse_workspace.iml" filepath="$PROJECT_DIR$/melos_quant_pulse_workspace.iml"/>
+<module fileurl="file://$PROJECT_DIR$/.idea/quant_pulse_ai.iml" filepath="$PROJECT_DIR$/.idea/quant_pulse_ai.iml"/>
+    </modules>
+  </component>
+</project>

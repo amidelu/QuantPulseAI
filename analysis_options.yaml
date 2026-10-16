@@ -1,0 +1,31 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+formatter:
+  trailing_commas: automate
+  page_width: 100
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
+    - "**/*.pigeon.dart"
+    - "**/*.drift.dart"
+  errors:
+    invalid_annotation_target: ignore
+    missing_required_param: error
+    missing_return: error
+    todo: info
+
+linter:
+  rules:
+    public_member_api_docs: false
+    no_raw_types: true
+    prefer_const_constructors: true
+    prefer_final_locals: true
+    unawaited_futures: true
+    avoid_dynamic_calls: true
+    cancel_subscriptions: true

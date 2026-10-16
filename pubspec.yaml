@@ -1,0 +1,69 @@
+name: quant_pulse_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+workspace:
+  - apps/quant_pulse_mobile
+  - apps/widgetbook_showcase
+  - packages/core/core_network
+  - packages/core/core_storage
+  - packages/core/design_system
+  - packages/engines/market_stream_engine
+  - packages/engines/hybrid_ai_engine
+  - packages/features/feature_terminal
+  - packages/features/feature_ai_copilot
+  - packages/features/feature_backtester
+
+dev_dependencies:
+  melos: ^8.9.0
+  very_good_analysis: ^11.0.0
+
+melos:
+  repository: https://github.com/amidelu/QuantPulseAI
+
+  command:
+    bootstrap:
+      runPubGetInParallel: true
+    format:
+      setExitIfChanged: true
+      lineLength: 100
+
+  categories:
+    apps:
+      - "apps/**"
+    core:
+      - "packages/core/**"
+    engines:
+      - "packages/engines/**"
+    features:
+      - "packages/features/**"
+
+  scripts:
+    analyze:
+      exec: flutter analyze
+      description: Run static analysis across all workspace packages.
+
+    test:
+      exec:
+        command: flutter test --coverage
+        concurrency: 4
+        failFast: true
+      packageFilters:
+        dirExists: test
+      description: Run unit and BLoC tests across all packages containing a test directory.
+
+    codegen:
+      exec:
+        command: dart run build_runner build --delete-conflicting-outputs
+        concurrency: 2
+        orderDependents: true
+      packageFilters:
+        dependsOn: build_runner
+      description: Run build_runner v2.16+ in topological dependency order.
+
+    check-architecture:
+      run: |
+        ! grep -rn "package:feature_" packages/features/ | grep -v -E "packages/features/([^/]+)/.*package:\1"
+      description: Guardrail ensuring feature packages never import another feature package.
