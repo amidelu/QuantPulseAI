@@ -24,6 +24,7 @@ linter:
   rules:
     public_member_api_docs: false
     no_raw_types: true
+    lines_longer_than_80_chars: false
     prefer_const_constructors: true
     prefer_final_locals: true
     unawaited_futures: true

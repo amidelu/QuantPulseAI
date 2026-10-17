@@ -1,8 +1,29 @@
 name: feature_terminal
+description: High-frequency market terminal UI, BLoC, and CustomPainter chart canvas.
 version: 0.1.0
 publish_to: none
 
 environment:
   sdk: ^3.13.0
+  flutter: ">=3.32.0"
 
 resolution: workspace
+
+dependencies:
+  bloc: ^9.2.1
+  bloc_concurrency: ^0.3.0
+  core_network:
+    path: ../../core/core_network
+  equatable: ^3.0.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  market_stream_engine:
+    path: ../../engines/market_stream_engine
+
+dev_dependencies:
+  bloc_test: ^10.0.0
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.5
+  very_good_analysis: ^11.0.0

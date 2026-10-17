@@ -51,6 +51,13 @@
             </list>
           </value>
         </entry>
+        <entry key="bloc_concurrency">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/bloc_concurrency-0.3.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="bloc_test">
           <value>
             <list>
@@ -810,6 +817,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/args-2.7.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/async-2.13.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/bloc-9.2.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/bloc_concurrency-0.3.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/bloc_test-10.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/boolean_selector-2.1.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/build-4.0.11/lib" />

@@ -44,6 +44,12 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "bloc_concurrency",
+      "rootUri": "file:///Users/amidelu/.pub-cache/hosted/pub.dev/bloc_concurrency-0.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "bloc_test",
       "rootUri": "file:///Users/amidelu/.pub-cache/hosted/pub.dev/bloc_test-10.0.0",
       "packageUri": "lib/",

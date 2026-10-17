@@ -49,26 +49,14 @@ sealed class const AppFailure({
   List<Object?> get props => [message, code];
 }
 
-final class const NetworkFailure({
-  required super.message,
-  super.code,
-  super.stackTrace,
-}) extends AppFailure;
+final class const NetworkFailure({required super.message, super.code, super.stackTrace})
+    extends AppFailure;
 
-final class const StorageFailure({
-  required super.message,
-  super.code,
-  super.stackTrace,
-}) extends AppFailure;
+final class const StorageFailure({required super.message, super.code, super.stackTrace})
+    extends AppFailure;
 
-final class const IsolateExecutionFailure({
-  required super.message,
-  super.code,
-  super.stackTrace,
-}) extends AppFailure;
+final class const IsolateExecutionFailure({required super.message, super.code, super.stackTrace})
+    extends AppFailure;
 
-final class const HardwareThermalFailure({
-  required super.message,
-  super.code,
-  super.stackTrace,
-}) extends AppFailure;
+final class const HardwareThermalFailure({required super.message, super.code, super.stackTrace})
+    extends AppFailure;

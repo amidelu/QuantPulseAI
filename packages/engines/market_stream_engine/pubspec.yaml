@@ -1,4 +1,5 @@
 name: market_stream_engine
+description: High-frequency background Isolate WebSocket engine and O(1) ring buffer.
 version: 0.1.0
 publish_to: none
 
@@ -6,3 +7,15 @@ environment:
   sdk: ^3.13.0
 
 resolution: workspace
+
+dependencies:
+  core_network:
+    path: ../../core/core_network
+  equatable: ^3.0.0
+  meta: ^1.16.0
+  web_socket_channel: ^3.0.3
+
+dev_dependencies:
+  mocktail: ^1.0.5
+  test: ^1.26.0
+  very_good_analysis: ^11.0.0

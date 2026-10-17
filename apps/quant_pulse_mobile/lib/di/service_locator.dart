@@ -9,11 +9,7 @@ enum AppEnvironment { dev, staging, prod }
 /// Injectable 3.0.0 configuration.
 /// As we add engine/feature @MicroPackageInit modules in Phases 2-4,
 /// they are registered in `externalPackageModulesBefore`.
-@InjectableInit(
-  preferRelativeImports: true,
-  externalPackageModulesBefore: [],
-)
-
+@InjectableInit(preferRelativeImports: true, externalPackageModulesBefore: [])
 Future<void> configureDependencies({
   AppEnvironment env = .dev, // Dart 3.10+ dot-shorthand syntax
 }) async {
