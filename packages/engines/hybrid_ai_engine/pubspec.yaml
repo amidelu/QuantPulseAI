@@ -1,8 +1,28 @@
 name: hybrid_ai_engine
+description: Hardware-aware Edge/Cloud AI router, Pigeon native telemetry bridge, and local RAG engine.
 version: 0.1.0
 publish_to: none
 
 environment:
   sdk: ^3.13.0
+  flutter: ">=3.32.0"
 
 resolution: workspace
+
+dependencies:
+  core_network:
+    path: ../../core/core_network
+  core_storage:
+    path: ../../core/core_storage
+  dio: ^5.11.1
+  equatable: ^3.0.0
+  flutter:
+    sdk: flutter
+  flutter_secure_storage: ^11.2.0
+  path_provider: ^2.1.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  pigeon: ^29.0.10
+  very_good_analysis: ^11.0.0

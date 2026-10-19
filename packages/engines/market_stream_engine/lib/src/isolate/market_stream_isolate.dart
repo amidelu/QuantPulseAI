@@ -15,14 +15,23 @@ final class const SubscribeSymbolCommand(final String symbol) extends IsolateCom
 
 final class const DisposeWorkerCommand() extends IsolateCommand;
 
+/// Abstract contract exposed to consumers and tests.
+abstract interface class IMarketStreamEngine {
+  Future<Stream<Result<MarketFrameSnapshot>>> connect({required String symbol});
+  void switchSymbol(String symbol);
+  Future<void> dispose();
+}
+
+/// Concrete implementation.
 /// High-frequency Market Stream Engine running inside a dedicated Worker Isolate.
-final class MarketStreamEngine {
+final class MarketStreamEngine implements IMarketStreamEngine {
   Isolate? _workerIsolate;
   SendPort? _workerSendPort;
   ReceivePort? _mainReceivePort;
   StreamController<Result<MarketFrameSnapshot>>? _snapshotController;
 
   /// Starts the worker isolate and returns a conflated 60Hz stream of [MarketFrameSnapshot].
+  @override
   Future<Stream<Result<MarketFrameSnapshot>>> connect({required String symbol}) async {
     await dispose();
 
@@ -54,10 +63,12 @@ final class MarketStreamEngine {
   }
 
   /// Switches the active ticker symbol without respawning the Isolate.
+  @override
   void switchSymbol(String symbol) {
     _workerSendPort?.send(SubscribeSymbolCommand(symbol.toLowerCase()));
   }
 
+  @override
   Future<void> dispose() async {
     _workerSendPort?.send(const DisposeWorkerCommand());
     _mainReceivePort?.close();
@@ -123,8 +134,7 @@ Future<void> _workerEntryPoint(_WorkerBootstrapConfig config) async {
     await channel?.sink.close();
 
     currentSymbol = symbol;
-    final seedPrice = symbol.startsWith('eth') ? 2650.0 : 68400.0;
-    seedInitialHistory(seedPrice);
+    ringBuffer.clear();
 
     final uri = Uri.parse(
       'wss://stream.binance.com:9443/stream?streams=$symbol@aggTrade/$symbol@depth10@100ms',
@@ -151,6 +161,11 @@ Future<void> _workerEntryPoint(_WorkerBootstrapConfig config) async {
             final qty = double.tryParse(data['q'] as String? ?? '');
             final tradeTimeMs = data['T'] as int?;
             if (price == null || qty == null || tradeTimeMs == null) return;
+
+            if (ringBuffer.length == 0) {
+              seedInitialHistory(price);
+            }
+            lastPrice = price;
 
             lastPrice = price;
             // Group into 5-second high-frequency candles for responsive visual movement

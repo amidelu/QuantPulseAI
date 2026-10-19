@@ -1,8 +1,26 @@
 name: widgetbook_showcase
+description: Interactive Widgetbook UI showcase for QuantPulse AI financial components.
 version: 0.1.0
 publish_to: none
 
 environment:
   sdk: ^3.13.0
+  flutter: ">=3.32.0"
 
 resolution: workspace
+
+dependencies:
+  design_system:
+    path: ../../packages/core/design_system
+  feature_terminal:
+    path: ../../packages/features/feature_terminal
+  flutter:
+    sdk: flutter
+  market_stream_engine:
+    path: ../../packages/engines/market_stream_engine
+  widgetbook: ^3.10.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^11.0.0
